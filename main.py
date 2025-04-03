@@ -1,4 +1,5 @@
-from books.book import display_books, search_book, add_book, delete_book
+from books.book import display_books, search_book, add_book, delete_book, update_book
+from data.data import books
 
 print("== Bienvenue chez Book Store ! == \n")
 
@@ -91,8 +92,34 @@ while True:
                    
             elif choix_autre == "4":
                 print("\n✏️ Modifier un livre : \n")
-                # Modifier un livre
-    
+                
+                title = input("🔹 Titre du livre à modifier : ").strip()
+                author = input("🔹 Auteur du livre à modifier : ").strip()
+                
+                # Vérifier si le livre existe avant de demander les modifications
+                book_exists = any(book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower() for book in books)
+
+                if not book_exists:
+                    print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur. ❌\n")
+                else:
+                    print("\n👉 Laissez vide si vous ne voulez pas modifier une information.\n")
+                    new_title = input("📖 Nouveau titre du livre : ").strip() or None
+                    new_author = input("✍️ Nouvel auteur : ").strip() or None
+                    
+                    # Vérifier si l'année est un nombre valide ou vide
+                    new_year = input("📅 Nouvelle année de publication : ").strip()
+                    new_year = int(new_year) if new_year.isdigit() else None  # Garde None si vide
+                    
+                    new_category = input("🗂️ Nouvelle catégorie : ").strip() or None
+
+                    print("\n⚠️ **Attention : Cette action est irréversible !** ⚠️")
+                    print("Êtes-vous sûr de vouloir modifier ce livre ?")
+                    confirmation = input("👉 Tapez 'oui' pour confirmer, 'non' pour annuler : ").strip().lower()
+
+                    if confirmation == "oui":
+                        update_book(title, author, new_title, new_author, new_year, new_category)
+                    else:
+                        print("\n🔙 **Modification annulée. Retour au menu principal...**\n")
                 
             else:
                 print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")
