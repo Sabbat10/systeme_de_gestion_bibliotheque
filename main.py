@@ -1,3 +1,5 @@
+from books.book import display_books
+
 print("== Bienvenue chez Book Store ! == \n")
 
 while True:
@@ -13,7 +15,8 @@ while True:
     if choix == "1":
         print("\n📚 Voici la liste des livres disponibles : \n")
         # Afficher la liste des livres
-        
+        display_books()
+                
     elif choix == "2":
         print("\n🔍 Rechercher un livre : \n")
         # Ajouter la recherche
