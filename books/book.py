@@ -44,3 +44,16 @@ def add_book(title, author, year, category):
     
     books.append(new_book)
     print(f"\n✅ Le livre '{title}' a été ajouté avec succès à la bibliothèque !\n")
+    
+    
+
+# Suppression d'un livre
+# Cette fonction permet à l'utilisateur de supprimer un livre de la bibliothèque.
+def delete_book(title, author):
+    for book in books:
+        if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
+            books.remove(book)
+            print(f"\n❌ Le livre '{title}' a été supprimé de la bibliothèque !\n")
+            return
+    print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")
+    

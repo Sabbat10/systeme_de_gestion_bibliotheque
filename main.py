@@ -1,4 +1,4 @@
-from books.book import display_books, search_book, add_book
+from books.book import display_books, search_book, add_book, delete_book
 
 print("== Bienvenue chez Book Store ! == \n")
 
@@ -37,6 +37,7 @@ while True:
             if choix_autre == "1":
                 break
             
+            
             elif choix_autre == "2":
                 print("\n📚 Ajouter un livre : \n")
                 # Ajouter un livre
@@ -62,17 +63,40 @@ while True:
                     continue
                 # Ajouter le livre
                 add_book(title, author, year, category)
+    
                 
             elif choix_autre == "3":
                 print("\n🗑️ Supprimer un livre : \n")
                 # Supprimer un livre
                 
+                title = input("Titre du livre à supprimer : ")
+                author = input("Auteur du livre à supprimer : ")
+                
+                while True:
+                    print("\n⚠️ **Attention : Cette action est irréversible !** ⚠️\n")
+                    print("Êtes-vous sûr de vouloir supprimer ce livre ? Appuer sur  : \n1. Supprimer\n2. Annuler")
+                    confirmation = input("👉 **Choisissez une option** : ").strip().lower()
+                
+                    if confirmation == "1":
+                        delete_book(title, author)
+                        
+                    elif confirmation == "2":
+                        print("\n🔙 **Retour au menu principal...**\n")
+                        break
+                    else:
+                        print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")
+                        continue
+                    break
+      
+                   
             elif choix_autre == "4":
                 print("\n✏️ Modifier un livre : \n")
                 # Modifier un livre
+    
                 
             else:
                 print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")
+    
     
     elif choix == "4":
         print("\n❌ **Fermeture du programme...** À bientôt ! 👋\n")
