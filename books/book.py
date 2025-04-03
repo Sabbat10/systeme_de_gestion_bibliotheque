@@ -1,6 +1,7 @@
 from data.data import books
 
-
+# Affichage de la liste des livres
+# Cette fonction affiche la liste des livres disponibles dans la bibliothèque.
 def display_books():
     print("📚 BOOKS 📚\n")
     for book in books:
@@ -9,6 +10,8 @@ def display_books():
     print("\n")  
 
 
+# Recherche de livres par mot-clé
+# Cette fonction permet à l'utilisateur de rechercher des livres en fonction de divers critères.
 def search_book():
     keyword = input("\n🔍 Entrez un mot-clé (titre, auteur, catégorie ou année) : ").strip().lower()
     
@@ -26,3 +29,18 @@ def search_book():
 
     if not found:
         print("\n⚠️ Aucun livre trouvé avec ce mot-clé. Essayez un autre !\n")
+        
+
+# Ajout d'un livre
+# Cette fonction permet à l'utilisateur d'ajouter un livre à la bibliothèque.
+def add_book(title, author, year, category):
+
+    new_book = {
+        'title_book': title,
+        'author': author,
+        'year': year,
+        'category': category
+    }
+    
+    books.append(new_book)
+    print(f"\n✅ Le livre '{title}' a été ajouté avec succès à la bibliothèque !\n")

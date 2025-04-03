@@ -1,4 +1,4 @@
-from books.book import display_books, search_book
+from books.book import display_books, search_book, add_book
 
 print("== Bienvenue chez Book Store ! == \n")
 
@@ -36,15 +36,41 @@ while True:
             choix_autre = input("👉 **Choisissez une option** : ")
             if choix_autre == "1":
                 break
+            
             elif choix_autre == "2":
                 print("\n📚 Ajouter un livre : \n")
                 # Ajouter un livre
+                
+                title = input("Titre du livre : ")
+                author = input("Auteur du livre : ")
+                
+                if title == "" or author == "":
+                    print("\n⚠️ **Erreur : Veuillez entrer des informations valide !** ⚠️\n")
+                    continue
+                # Vérifier si l'année est valide
+                try:
+                    year = int(input("Année de publication : "))
+                    
+                except ValueError:
+                    print("\n⚠️ **Erreur : Veuillez entrer des informations valide !** ⚠️\n")
+                    continue
+                
+                # Vérifier si la catégorie est valide
+                category = input("Catégorie du livre : ")
+                if category == "":
+                    print("\n⚠️ **Erreur : Veuillez entrer des informations valide !** ⚠️\n")
+                    continue
+                # Ajouter le livre
+                add_book(title, author, year, category)
+                
             elif choix_autre == "3":
                 print("\n🗑️ Supprimer un livre : \n")
                 # Supprimer un livre
+                
             elif choix_autre == "4":
                 print("\n✏️ Modifier un livre : \n")
                 # Modifier un livre
+                
             else:
                 print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")
     
