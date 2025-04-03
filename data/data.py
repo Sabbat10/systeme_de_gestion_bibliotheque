@@ -1,0 +1,72 @@
+books = [
+    {
+        "id": 2,
+        "author": "Jane Austen",
+        "title_book": "Orgueil et Préjugés",
+        "category": "Classique",
+        "year": 1813,
+    },
+    {
+        "id": 3,
+        "author": "George Orwell",
+        "title_book": "1984",
+        "category": "Dystopie",
+        "year": 1949,
+    },
+    {
+        "id": 4,
+        "author": "J.K. Rowling",
+        "title_book": "Harry Potter à l'école des sorciers",
+        "category": "Fantasy",
+        "year": 1997,
+    },
+    {
+        "id": 5,
+        "author": "J.R.R. Tolkien",
+        "title_book": "Le Hobbit",
+        "category": "Fantasy",
+        "year": 1937,
+    },
+    {
+        "id": 6,
+        "author": "F. Scott Fitzgerald",
+        "title_book": "Gatsby le Magnifique",
+        "category": "Classique",
+        "year": 1925,
+    },
+    {
+        "id": 7,
+        "author": "Harper Lee",
+        "title_book": "Ne tirez pas sur l'oiseau moqueur",
+        "category": "Classique",
+        "year": 1960,
+    },
+    {
+        "id": 8,
+        "author": "Victor Hugo",
+        "title_book": "Les Misérables",
+        "category": "Historique",
+        "year": 1862,
+    },
+    {
+        "id": 9,
+        "author": "Alexandre Dumas",
+        "title_book": "Le Comte de Monte-Cristo",
+        "category": "Aventure",
+        "year": 1844,
+    },
+    {
+        "id": 10,
+        "author": "Dan Brown",
+        "title_book": "Da Vinci Code",
+        "category": "Thriller",
+        "year": 2003,
+    },
+    {
+        "id": 11,
+        "author": "Mary Shelley",
+        "title_book": "Frankenstein",
+        "category": "Fiction gothique",
+        "year": 1818,
+    }
+]
