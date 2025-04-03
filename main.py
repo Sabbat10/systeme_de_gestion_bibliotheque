@@ -1,4 +1,4 @@
-from books.book import display_books
+from books.book import display_books, search_book
 
 print("== Bienvenue chez Book Store ! == \n")
 
@@ -10,6 +10,8 @@ while True:
     print("3️⃣  Autres options ⚙️")
     print("4️⃣  Quitter ❌\n")
     
+    print("=="*40)
+    
     choix = input("👉 **Choisissez une option** : ")
 
     if choix == "1":
@@ -18,8 +20,7 @@ while True:
         display_books()
                 
     elif choix == "2":
-        print("\n🔍 Rechercher un livre : \n")
-        # Ajouter la recherche
+        search_book() 
         
     elif choix == "3":
         while True:
