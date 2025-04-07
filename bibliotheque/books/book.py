@@ -1,4 +1,4 @@
-from data.data import books
+from ..data.data import books
 
 # Affichage de la liste des livres
 # Cette fonction affiche la liste des livres disponibles dans la bibliothèque.
@@ -76,3 +76,5 @@ def update_book(title, author, new_title=None, new_author=None, new_year=None, n
             print(f"\n✅ Le livre '{title}' a été modifié avec succès !\n")
             return
     print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")
+    
+    
