@@ -5,6 +5,7 @@ books = [
         "title_book": "Orgueil et Préjugés",
         "category": "Classique",
         "year": 1813,
+        "cantity": 3,
     },
     {
         "id": 3,
@@ -12,6 +13,7 @@ books = [
         "title_book": "1984",
         "category": "Dystopie",
         "year": 1949,
+        "cantity": 1,
     },
     {
         "id": 4,
@@ -19,6 +21,7 @@ books = [
         "title_book": "Harry Potter à l'école des sorciers",
         "category": "Fantasy",
         "year": 1997,
+        "cantity": 5,
     },
     {
         "id": 5,
@@ -26,6 +29,7 @@ books = [
         "title_book": "Le Hobbit",
         "category": "Fantasy",
         "year": 1937,
+        "cantity": 2,
     },
     {
         "id": 6,
@@ -33,6 +37,7 @@ books = [
         "title_book": "Gatsby le Magnifique",
         "category": "Classique",
         "year": 1925,
+        "cantity": 4,
     },
     {
         "id": 7,
@@ -40,6 +45,7 @@ books = [
         "title_book": "Ne tirez pas sur l'oiseau moqueur",
         "category": "Classique",
         "year": 1960,
+        "cantity": 1,
     },
     {
         "id": 8,
@@ -47,6 +53,7 @@ books = [
         "title_book": "Les Misérables",
         "category": "Historique",
         "year": 1862,
+        "cantity": 5,
     },
     {
         "id": 9,
@@ -54,6 +61,7 @@ books = [
         "title_book": "Le Comte de Monte-Cristo",
         "category": "Aventure",
         "year": 1844,
+        "cantity": 2,
     },
     {
         "id": 10,
@@ -61,6 +69,7 @@ books = [
         "title_book": "Da Vinci Code",
         "category": "Thriller",
         "year": 2003,
+        "cantity": 3,
     },
     {
         "id": 11,
@@ -68,5 +77,6 @@ books = [
         "title_book": "Frankenstein",
         "category": "Fiction gothique",
         "year": 1818,
+        "cantity": 4,
     }
 ]
