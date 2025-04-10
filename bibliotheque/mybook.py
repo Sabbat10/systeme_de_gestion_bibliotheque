@@ -1,4 +1,4 @@
-from bibliotheque.books.book import display_books, search_book, add_book, delete_book, update_book
+from bibliotheque.books.book import display_books, search_book, add_book, delete_book, update_book, borrow_book, return_book
 from bibliotheque.data.data import books
 
 def mybooks():
@@ -33,6 +33,8 @@ def mybooks():
                 print("2️⃣  A️Jouter un livre 📚")
                 print("3️⃣  Supprimer un livre 🗑️")
                 print("4️⃣  Modifier un livre ✏️")
+                print("5️⃣  Enprunter un livre 📖")
+                print("6️⃣  Retourner un livre 📚")
                 
                 
                 choix_autre = input("👉 **Choisissez une option** : ")
@@ -121,6 +123,24 @@ def mybooks():
                             update_book(title, author, new_title, new_author, new_year, new_category)
                         else:
                             print("\n🔙 **Modification annulée. Retour au menu principal...**\n")
+                            
+                elif choix_autre == "5":
+                    print("\n📖 Enprunter un livre : \n")
+                    # Emprunter un livre
+                    
+                    title = input("Titre du livre à emprunter : ")
+                    author = input("Auteur du livre à emprunter : ")
+                    
+                    borrow_book(title, author)
+                    
+                elif choix_autre == "6":
+                    print("\n📚 Retourner un livre : \n")
+                    # Retourner un livre
+                    
+                    title = input("Titre du livre à retourner : ")
+                    author = input("Auteur du livre à retourner : ")
+                    
+                    return_book(title, author)
                     
                 else:
                     print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")

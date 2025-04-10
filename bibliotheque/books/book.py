@@ -33,13 +33,14 @@ def search_book():
 
 # Ajout d'un livre
 # Cette fonction permet à l'utilisateur d'ajouter un livre à la bibliothèque.
-def add_book(title, author, year, category):
+def add_book(title, author, year, category, cantity=1):
 
     new_book = {
         'title_book': title,
         'author': author,
         'year': year,
-        'category': category
+        'category': category,
+        'cantity': cantity
     }
     
     books.append(new_book)
@@ -78,3 +79,29 @@ def update_book(title, author, new_title=None, new_author=None, new_year=None, n
     print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")
     
     
+
+# Enprunter un livre
+# Cette fonction permet à l'utilisateur d'emprunter un livre de la bibliothèque.
+
+def borrow_book(title, author):
+    for book in books:
+        if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
+            if book['cantity'] > 0:
+                book['cantity'] -= 1
+                print(f"\n📚 Vous avez emprunté le livre '{title}' avec succès !\n")
+                return
+            else:
+                print("\n⚠️ Ce livre n'est pas disponible en ce moment.\n")
+                return
+    print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")
+    
+    
+# Retourner un livre
+# Cette fonction permet à l'utilisateur de retourner un livre à la bibliothèque.
+def return_book(title, author):
+    for book in books:
+        if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
+            book['cantity'] += 1
+            print(f"\n📚 Vous avez retourné le livre '{title}' avec succès !\n")
+            return
+    print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")
