@@ -91,7 +91,8 @@ def borrow_book(title, author, name_user, first_name_user):
         if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
             if book['cantity'] > 0:
                 book['cantity'] -= 1
-                print(f"\n📚  {first_name_user} {name_user} vous avez emprumté le livre '{title}' avec succès !\n")
+                print(f"\n🎉📚  {first_name_user} {name_user}, vous avez emprunté le livre 📖 '{title}' avec succès ! ✅\n")
+                # print(f"📅 Date d'emprunt : {book['year']}")
                 return
             else:
                 print("\n⚠️ Ce livre n'est pas disponible en ce moment.\n")
@@ -101,10 +102,10 @@ def borrow_book(title, author, name_user, first_name_user):
     
 # Retourner un livre
 # Cette fonction permet à l'utilisateur de retourner un livre à la bibliothèque.
-def return_book(title, author):
+def return_book(title, author, name_user, first_name_user):
     for book in books:
         if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
             book['cantity'] += 1
-            print(f"\n📚 Vous avez retourné le livre '{title}' avec succès !\n")
+            print(f"\n📚 {first_name_user, name_user} Vous avez retourné le livre '{title}' avec succès !✅\n")
             return
     print("\n⚠️ Aucun livre trouvé avec ce titre et cet auteur.\n")

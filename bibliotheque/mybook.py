@@ -154,10 +154,14 @@ def mybooks():
                     print("\n📚 Retourner un livre : \n")
                     # Retourner un livre
                     
+                    name = input("🧑 Votre Nom: ")
+                    first_name = input("👶 Votre Prénom: ")
+                    
+                    
                     title = input("Titre du livre à retourner : ")
                     author = input("Auteur du livre à retourner : ")
                     
-                    return_book(title, author)
+                    return_book(title, author, name, first_name)
                     
                 else:
                     print("\n⚠️ **Option invalide, veuillez réessayer !** ⚠️\n")
