@@ -1,3 +1,3 @@
-from user.utilisateur.utilisateurs import add_user
+from user.utilisateur.utilisateurs import display_users, add_user
 
     
