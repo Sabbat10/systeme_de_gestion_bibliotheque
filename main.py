@@ -1,5 +1,5 @@
 from bibliotheque.mybook import mybooks
-from user.myUser import *
+from user.myUser import add_user
 
-myUser()
-mybooks()
+add_user()
+# mybooks()

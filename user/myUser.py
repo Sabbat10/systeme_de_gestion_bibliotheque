@@ -1,4 +1,3 @@
-from user.utilisateur.utilisateurs import myUser
+from user.utilisateur.utilisateurs import add_user
 
-myUser()
     
