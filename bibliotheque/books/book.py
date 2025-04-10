@@ -1,4 +1,6 @@
 from ..data.data import books
+# from user.utilisateur.utilisateurs import list_users, add_user, display_users
+
 
 # Affichage de la liste des livres
 # Cette fonction affiche la liste des livres disponibles dans la bibliothèque.
@@ -83,12 +85,13 @@ def update_book(title, author, new_title=None, new_author=None, new_year=None, n
 # Enprunter un livre
 # Cette fonction permet à l'utilisateur d'emprunter un livre de la bibliothèque.
 
-def borrow_book(title, author):
+def borrow_book(title, author, name_user, first_name_user):
+    
     for book in books:
         if book['title_book'].lower() == title.lower() and book['author'].lower() == author.lower():
             if book['cantity'] > 0:
                 book['cantity'] -= 1
-                print(f"\n📚 Vous avez emprunté le livre '{title}' avec succès !\n")
+                print(f"\n📚  {first_name_user} {name_user} vous avez emprumté le livre '{title}' avec succès !\n")
                 return
             else:
                 print("\n⚠️ Ce livre n'est pas disponible en ce moment.\n")

@@ -19,18 +19,9 @@ def display_users():
 
 
 # Fonction pour Ajouter un utilisateur à la liste des utilisateurs
-def add_user():
+def add_user(name, first_name, age, email, password):
     
-    name = input("🧑 Votre Nom: ")
-    first_name = input("👶 Votre Prénom: ")
-    # Vérification de l'âge
-    try:
-        age = int(input("🎂 Votre Age : ")  )
-    except ValueError:
-        print("L'âge doit être un nombre entier.")
-        return
-    email = input("📧 Email: ")
-    password = input("🔒 Votre Mot de passe: ")
+    print("")
 
     # Vérification de l'âge
     if age < 0:

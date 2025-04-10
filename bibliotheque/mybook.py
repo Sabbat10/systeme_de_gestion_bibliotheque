@@ -1,5 +1,6 @@
 from bibliotheque.books.book import display_books, search_book, add_book, delete_book, update_book, borrow_book, return_book
 from bibliotheque.data.data import books
+from user.utilisateur.utilisateurs import add_user, display_users
 
 def mybooks():
     print("== Bienvenue chez Book Store ! == \n")
@@ -126,12 +127,28 @@ def mybooks():
                             
                 elif choix_autre == "5":
                     print("\n📖 Enprunter un livre : \n")
-                    # Emprunter un livre
+                    print("")
+                    print("👉 Inscrivez-vous avant d'empruter le Livre !\n")
                     
+                    name = input("🧑 Votre Nom: ")
+                    first_name = input("👶 Votre Prénom: ")
+                    # Vérification de l'âge
+                    try:
+                        age = int(input("🎂 Votre Age : ")  )
+                    except ValueError:
+                        print("L'âge doit être un nombre entier.")
+                        return
+                    email = input("📧 Email: ")
+                    password = input("🔒 Votre Mot de passe: ")
+                    
+                    # Ajouter l'utilisateur
+                    add_user(name, first_name, age, email, password)
+            
+                    # Emprunter un livre
                     title = input("Titre du livre à emprunter : ")
                     author = input("Auteur du livre à emprunter : ")
                     
-                    borrow_book(title, author)
+                    borrow_book(title, author, name, first_name)
                     
                 elif choix_autre == "6":
                     print("\n📚 Retourner un livre : \n")
